@@ -1,11 +1,12 @@
 import React from 'react';
+import ContainerTable from './container/ContainerTable';
 
 const App = () => {
-  return (
-    <div>
-      <h1>Create Table</h1>
-    </div>
-  );
+	return (
+		<div>
+			<ContainerTable />
+		</div>
+	);
 };
 
 export default App;
