@@ -6,11 +6,11 @@ export function getEmployees() {
 	};
 }
 
-export function sortBy(key) {
+export function sortBy(sortKey) {
 	return {
 		type: constants.SORT_BY,
 		payload: {
-			key,
+			sortKey,
 		},
 	};
 }

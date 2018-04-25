@@ -9,7 +9,14 @@ const TableBody = ({ employees }) => {
 						<td>{employee.id}</td>
 						<td>{employee.firstName}</td>
 						<td>{employee.lastName}</td>
-						<td>{employee.dateOfBirth}</td>
+						<td>
+							{employee.dateOfBirth
+								.split(' ')
+								.slice(0, 1)
+								.join('')
+								.split('.')
+								.join('-')}
+						</td>
 						<td>{employee.company}</td>
 						<td>{employee.note}</td>
 					</tr>
