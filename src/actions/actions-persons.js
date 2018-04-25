@@ -5,3 +5,12 @@ export function getPersons() {
 		type: constants.GET_PERSONS,
 	};
 }
+
+export function sortBy(key) {
+	return {
+		type: constants.SORT_BY,
+		payload: {
+			key,
+		},
+	};
+}

@@ -2,12 +2,13 @@ import React from 'react';
 import TableHeader from './TableHeaderComponent';
 import TableBody from './TableBodyComponent';
 
-const Table = ({ persons }) => {
+const Table = ({ ...props }) => {
+	console.log(props.persons[1].id);
 	return (
 		<div>
 			<table>
-				<TableHeader />
-				<TableBody persons={persons} />
+				<TableHeader {...props} />
+				<TableBody persons={props.persons} />
 			</table>
 		</div>
 	);

@@ -1,11 +1,12 @@
 import React from 'react';
 
 const TableBody = ({ persons }) => {
+	console.log(`tablebody => ${persons}`);
 	return (
 		<tbody>
 			{persons.map(person => {
 				return (
-					<tr>
+					<tr key={person.id}>
 						<td>{person.id}</td>
 						<td>{person.firstName}</td>
 						<td>{person.lastName}</td>

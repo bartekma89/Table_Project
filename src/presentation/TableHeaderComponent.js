@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TableHeader = () => {
+const TableHeader = props => {
 	const headers = [
 		'iD',
 		'first Name',
@@ -9,9 +9,23 @@ const TableHeader = () => {
 		'Company',
 		'Note',
 	];
+	console.log(props.persons);
 	return (
 		<thead>
-			<tr>{headers.map(header => <th>{header}</th>)}</tr>
+			<tr>
+				<th>
+					<button onClick={props.sortBy.bind(this, 'id')}>iD</button>
+				</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Birth Date</th>
+				<th>Company</th>
+				<th>
+					<button onClick={props.sortBy.bind(this, 'note')}>
+						Note
+					</button>
+				</th>
+			</tr>
 		</thead>
 	);
 };

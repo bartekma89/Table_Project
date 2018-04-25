@@ -8,8 +8,19 @@ class ContainerTable extends Component {
 		this.props.getPersons();
 	}
 
+	sortBy(key) {
+		console.log('sortBy');
+		console.log(key);
+		console.log(this.props.persons);
+		this.props.sortBy(key);
+	}
 	render() {
-		return <Table persons={this.props.persons} />;
+		return (
+			<Table
+				persons={this.props.persons}
+				sortBy={this.sortBy.bind(this)}
+			/>
+		);
 	}
 }
 
@@ -22,6 +33,7 @@ const mapsStateToProps = store => {
 const mapsDispatchToProps = dispatch => {
 	return {
 		getPersons: () => dispatch(personsAction.getPersons()),
+		sortBy: key => dispatch(personsAction.sortBy(key)),
 	};
 };
 
