@@ -1,32 +1,28 @@
-import personsData from '../data/persons.json';
+import employeesData from '../data/persons.json';
 import * as constants from '../constants';
 
 const initialState = {
-	persons: personsData,
+	employees: employeesData,
 };
 
 const personsReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case constants.GET_PERSONS:
-			console.log('getPersons');
+		case constants.GET_EMPLOYEES:
 			return {
 				...state,
-				persons: state.persons,
+				employees: state.employees,
 			};
 		case constants.SORT_BY:
-			const stateCopy = state.persons;
+			const stateCopy = state.employees.slice();
 			const key = action.payload.key;
 
 			const sortArr = stateCopy.sort((a, b) => {
-				console.log(a);
-				console.log(a[key]);
 				return a[key] > b[key];
 			});
-			console.log(sortArr);
 
 			return {
 				...state,
-				persons: sortArr,
+				employees: sortArr,
 			};
 		default:
 			return state;

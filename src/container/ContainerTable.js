@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
-import * as personsAction from '../actions/actions-persons';
+import { getEmployees, sortBy } from '../actions/actions-employees';
 import { connect } from 'react-redux';
 import Table from '../presentation/TableComponent';
 
 class ContainerTable extends Component {
 	componentDidMount() {
-		this.props.getPersons();
+		this.props.getEmployees();
 	}
 
 	sortBy(key) {
-		console.log('sortBy');
-		console.log(key);
-		console.log(this.props.persons);
 		this.props.sortBy(key);
 	}
 	render() {
 		return (
 			<Table
-				persons={this.props.persons}
+				employees={this.props.employees}
 				sortBy={this.sortBy.bind(this)}
 			/>
 		);
@@ -26,14 +23,14 @@ class ContainerTable extends Component {
 
 const mapsStateToProps = store => {
 	return {
-		persons: store.persons,
+		employees: store.employees,
 	};
 };
 
 const mapsDispatchToProps = dispatch => {
 	return {
-		getPersons: () => dispatch(personsAction.getPersons()),
-		sortBy: key => dispatch(personsAction.sortBy(key)),
+		getEmployees: () => dispatch(getEmployees()),
+		sortBy: key => dispatch(sortBy(key)),
 	};
 };
 

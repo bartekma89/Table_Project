@@ -1,8 +1,8 @@
 import * as constants from '../constants';
 
-export function getPersons() {
+export function getEmployees() {
 	return {
-		type: constants.GET_PERSONS,
+		type: constants.GET_EMPLOYEES,
 	};
 }
 
