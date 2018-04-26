@@ -1,5 +1,5 @@
 import employeesData from '../data/persons.json';
-import * as constants from '../constants';
+import { GET_EMPLOYEES, SORT_BY } from '../constants';
 
 const initialState = {
 	employees: employeesData,
@@ -7,20 +7,16 @@ const initialState = {
 };
 
 const compare = {
-	text: (key, a, b) => {
-		if (a[key] < b[key]) {
-			return -1;
-		} else {
-			return a[key] > b[key] ? 1 : 0;
-		}
+	text: (key, reverse, a, b) => {
+		return !reverse ? a[key] < b[key] : a[key] > b[key];
 	},
-	number: (key, a, b) => {
-		return a[key] - b[key];
+	number: (key, reverse, a, b) => {
+		return !reverse ? a[key] - b[key] : b[key] - a[key];
 	},
-	date: (key, a, b) => {
+	date: (key, reverse, a, b) => {
 		a = new Date(dateConverter(a[key]));
 		b = new Date(dateConverter(b[key]));
-		return a.getTime() - b.getTime();
+		return !reverse ? a - b : b - a;
 	},
 };
 
@@ -37,44 +33,36 @@ const dateConverter = date => {
 
 const personsReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case constants.GET_EMPLOYEES:
+		case GET_EMPLOYEES:
 			return {
 				...state,
 				employees: state.employees,
 			};
-		case constants.SORT_BY:
+		case SORT_BY:
 			const stateCopy = state.employees.slice();
-			const key = action.payload.sortKey;
+			const sortKey = action.payload.sortKey;
 			var reverse = state.reverse;
 
-			const compareBy = function(key) {
+			const compareBy = function(sortKey) {
 				return function(a, b) {
-					switch (key) {
+					switch (sortKey) {
 						case 'id':
 						case 'note':
-							return compare.number(key, a, b);
+							return compare.number(sortKey, reverse, a, b);
 						case 'dateOfBirth':
-							return compare.date(key, a, b);
+							return compare.date(sortKey, reverse, a, b);
 						default:
-							return compare.text(key, a, b);
+							return compare.text(sortKey, reverse, a, b);
 					}
 				};
 			};
 
-			const sortedData = stateCopy.sort(compareBy(key));
-
-			if (!state.reverse) {
-				sortedData;
-				reverse = true;
-			} else {
-				sortedData.reverse();
-				reverse = false;
-			}
+			const sortedData = stateCopy.sort(compareBy(sortKey));
 
 			return {
 				...state,
 				employees: sortedData,
-				reverse,
+				reverse: !reverse,
 			};
 		default:
 			return state;

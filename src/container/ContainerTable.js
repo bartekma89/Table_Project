@@ -8,7 +8,7 @@ class ContainerTable extends Component {
 		this.props.getEmployees();
 	}
 
-	sortBy(key) {
+	sortBy(key, reverse) {
 		this.props.sortBy(key);
 	}
 	render() {
@@ -30,7 +30,7 @@ const mapsStateToProps = store => {
 const mapsDispatchToProps = dispatch => {
 	return {
 		getEmployees: () => dispatch(getEmployees()),
-		sortBy: key => dispatch(sortBy(key)),
+		sortBy: (key, reverse) => dispatch(sortBy(key)),
 	};
 };
 

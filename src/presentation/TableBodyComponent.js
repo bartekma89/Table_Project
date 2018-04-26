@@ -6,10 +6,10 @@ const TableBody = ({ employees }) => {
 			{employees.map(employee => {
 				return (
 					<tr key={employee.id}>
-						<td>{employee.id}</td>
-						<td>{employee.firstName}</td>
-						<td>{employee.lastName}</td>
-						<td>
+						<td className="id">{employee.id}</td>
+						<td className="firstName">{employee.firstName}</td>
+						<td className="lastName">{employee.lastName}</td>
+						<td className="dateOfBirth">
 							{employee.dateOfBirth
 								.split(' ')
 								.slice(0, 1)
@@ -17,8 +17,8 @@ const TableBody = ({ employees }) => {
 								.split('.')
 								.join('-')}
 						</td>
-						<td>{employee.company}</td>
-						<td>{employee.note}</td>
+						<td className="company">{employee.company}</td>
+						<td className="note">{employee.note}</td>
 					</tr>
 				);
 			})}
