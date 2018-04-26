@@ -9,18 +9,37 @@ class ContainerTable extends Component {
 		super(props);
 
 		this.state = {
-			users: data,
-			currentPage: 1,
+			users: [],
+			renderedUsers: [],
+			page: 1,
 			usersPerPage: 5,
+			total: null,
 		};
-
-		this.handleClick = this.handleClick.bind(this);
 	}
 
-	handleClick(event) {
+	componentDidMount() {
 		this.setState({
-			currentPage: Number(event.target.id),
+			users: data,
+			renderedUsers: data.slice(0, this.state.usersPerPage),
+			total: data.length,
 		});
+	}
+
+	handleClick(page) {
+		this.setState({
+			page,
+		});
+	}
+	onPrevPage(event) {
+		this.handleClick(this.state.page - 1);
+	}
+
+	onNextPage(event) {
+		this.handleClick(this.state.page + 1);
+	}
+
+	onChangePage(event) {
+		this.handleClick(event.target.id);
 	}
 
 	sortBy(key, reverse) {
@@ -28,24 +47,33 @@ class ContainerTable extends Component {
 	}
 
 	render() {
-		const { users, currentPage, usersPerPage } = this.state;
+		const { users, page, usersPerPage, total } = this.state;
 
 		const currentUsers = users.slice(
-			(currentPage - 1) * usersPerPage,
-			(currentPage - 1) * usersPerPage + usersPerPage
+			(page - 1) * usersPerPage,
+			(page - 1) * usersPerPage + usersPerPage
 		);
 
 		const pageNumbers = [];
-		for (let i = 1; i <= Math.ceil(users.length / usersPerPage); i++) {
+		for (let i = 1; i <= Math.ceil(total / usersPerPage); i++) {
 			pageNumbers.push(i);
 		}
+
+		const nextPage =
+			this.state.page === 2 ? null : (
+				<div onClick={this.onNextPage.bind(this)}>next</div>
+			);
+		const prevPage =
+			this.state.page === 1 ? null : (
+				<div onClick={this.onPrevPage.bind(this)}>prev</div>
+			);
 
 		const renderPageNumbers = pageNumbers.map(pageNumber => {
 			return (
 				<li
 					key={pageNumber}
 					id={pageNumber}
-					onClick={this.handleClick.bind(this)}
+					onClick={this.onChangePage.bind(this)}
 				>
 					{pageNumber}
 				</li>
@@ -58,7 +86,9 @@ class ContainerTable extends Component {
 					employees={currentUsers}
 					sortBy={this.sortBy.bind(this)}
 				/>
+				{prevPage}
 				<ul>{renderPageNumbers}</ul>
+				{nextPage}
 			</div>
 		);
 	}
