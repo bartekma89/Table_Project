@@ -14,3 +14,12 @@ export function sortBy(sortKey) {
 		},
 	};
 }
+
+export function changePage(page) {
+	return {
+		type: constants.CHANGE_PAGE,
+		payload: {
+			page,
+		},
+	};
+}

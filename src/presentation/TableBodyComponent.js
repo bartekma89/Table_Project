@@ -1,6 +1,7 @@
 import React from 'react';
 
 const TableBody = ({ employees }) => {
+	console.log(employees);
 	return (
 		<tbody>
 			{employees.map(employee => {

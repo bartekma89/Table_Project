@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
-import personsReducer from '../reducers/personsReducer';
+import employeesReducer from '../reducers/employeesReducer';
 import DevTools from '../DevTools';
 
-const store = createStore(personsReducer, DevTools.instrument());
+const store = createStore(employeesReducer, DevTools.instrument());
 
 export default store;
