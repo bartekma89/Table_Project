@@ -5,22 +5,30 @@ const TableHeader = ({ sortBy }) => {
 		<thead>
 			<tr>
 				<th>
-					<button>iD</button>
+					<button onClick={sortBy.bind(this, 'id')}>iD</button>
 				</th>
 				<th>
-					<button>First Name</button>
+					<button onClick={sortBy.bind(this, 'firstName')}>
+						First Name
+					</button>
 				</th>
 				<th>
-					<button>Last Name</button>
+					<button onClick={sortBy.bind(this, 'lastName')}>
+						Last Name
+					</button>
 				</th>
 				<th>
-					<button>BirthDate</button>
+					<button onClick={sortBy.bind(this, 'dateOfBirth')}>
+						Birth Date
+					</button>
 				</th>
 				<th>
-					<button>Company</button>
+					<button onClick={sortBy.bind(this, 'company')}>
+						Company
+					</button>
 				</th>
 				<th>
-					<button>Note</button>
+					<button onClick={sortBy.bind(this, 'note')}>Note</button>
 				</th>
 			</tr>
 		</thead>

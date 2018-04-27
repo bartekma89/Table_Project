@@ -1,14 +1,14 @@
-import * as constants from '../constants';
+import { GET_EMPLOYEES, SORT_BY, CHANGE_PAGE } from '../constants';
 
 export function getEmployees() {
 	return {
-		type: constants.GET_EMPLOYEES,
+		type: GET_EMPLOYEES,
 	};
 }
 
 export function sortBy(sortKey) {
 	return {
-		type: constants.SORT_BY,
+		type: SORT_BY,
 		payload: {
 			sortKey,
 		},
@@ -17,7 +17,7 @@ export function sortBy(sortKey) {
 
 export function changePage(page) {
 	return {
-		type: constants.CHANGE_PAGE,
+		type: CHANGE_PAGE,
 		payload: {
 			page,
 		},
