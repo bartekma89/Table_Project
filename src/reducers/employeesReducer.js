@@ -24,7 +24,6 @@ const employeesReducer = (state = initialState, action) => {
 
 		case CHANGE_PAGE:
 			const page = action.payload.page;
-			console.log(`reducer page: ${page}`);
 			let paginationPageEmployees = state.employees.slice(
 				(page - 1) * state.usersPerPage,
 				(page - 1) * state.usersPerPage + state.usersPerPage
@@ -58,11 +57,6 @@ const employeesReducer = (state = initialState, action) => {
 			const sortedDataPagination = sortedData.slice(
 				(state.page - 1) * state.usersPerPage,
 				(state.page - 1) * state.usersPerPage + state.usersPerPage
-			);
-			console.log(`page: ${state.page}`);
-			console.log(`sortedData: ${JSON.stringify(sortedData)}`);
-			console.log(
-				`sortedDataPagination: ${JSON.stringify(sortedDataPagination)}`
 			);
 
 			return {

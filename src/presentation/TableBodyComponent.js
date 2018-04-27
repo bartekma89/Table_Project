@@ -22,12 +22,33 @@ const TableBody = ({ employees }) => {
 };
 
 function formatChange(element) {
-	return element
+	let months = [
+		'styczeń',
+		'luty',
+		'marzec',
+		'kwiecień',
+		'maj',
+		'czerwiec',
+		'lipiec',
+		'sierpien',
+		'wrzesień',
+		'październik',
+		'listopad',
+		'grudzień',
+	];
+
+	let removeTime = element
 		.split(' ')
 		.slice(0, 1)
-		.join('')
-		.split('.')
-		.join('-');
+		.join('');
+
+	let removeZeroPrefix = removeTime.replace(/\b0/g, '');
+	let dateArray = removeZeroPrefix.split('.');
+	let newDateFormat = removeZeroPrefix.replace(
+		`.${dateArray[1]}.`,
+		` ${months[dateArray[1]]} `
+	);
+	return newDateFormat;
 }
 
 export default TableBody;
