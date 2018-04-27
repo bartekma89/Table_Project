@@ -1,34 +1,51 @@
 import React from 'react';
+import Button from './ButtonComponent';
 
 const TableHeader = ({ sortBy }) => {
 	return (
 		<thead>
 			<tr>
 				<th>
-					<button onClick={sortBy.bind(this, 'id')}>iD</button>
+					<Button
+						sortBy={sortBy.bind(this)}
+						sortKey="id"
+						title="iD"
+					/>
 				</th>
 				<th>
-					<button onClick={sortBy.bind(this, 'firstName')}>
-						First Name
-					</button>
+					<Button
+						sortBy={sortBy.bind(this)}
+						sortKey="firstName"
+						title="First Name"
+					/>
 				</th>
 				<th>
-					<button onClick={sortBy.bind(this, 'lastName')}>
-						Last Name
-					</button>
+					<Button
+						sortBy={sortBy.bind(this)}
+						sortKey="lastName"
+						title="Last Name"
+					/>
 				</th>
 				<th>
-					<button onClick={sortBy.bind(this, 'dateOfBirth')}>
-						Birth Date
-					</button>
+					<Button
+						sortBy={sortBy.bind(this)}
+						sortKey="dateOfBirth"
+						title="Birth Date"
+					/>
 				</th>
 				<th>
-					<button onClick={sortBy.bind(this, 'company')}>
-						Company
-					</button>
+					<Button
+						sortBy={sortBy.bind(this)}
+						sortKey="company"
+						title="Company"
+					/>
 				</th>
 				<th>
-					<button onClick={sortBy.bind(this, 'note')}>Note</button>
+					<Button
+						sortBy={sortBy.bind(this)}
+						sortKey="note"
+						title="Note"
+					/>
 				</th>
 			</tr>
 		</thead>

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const TableBody = ({ employees }) => {
-	console.log(employees);
 	return (
 		<tbody>
 			{employees.map(employee => {
@@ -11,12 +10,7 @@ const TableBody = ({ employees }) => {
 						<td className="firstName">{employee.firstName}</td>
 						<td className="lastName">{employee.lastName}</td>
 						<td className="dateOfBirth">
-							{employee.dateOfBirth
-								.split(' ')
-								.slice(0, 1)
-								.join('')
-								.split('.')
-								.join('-')}
+							{formatChange(employee.dateOfBirth)}
 						</td>
 						<td className="company">{employee.company}</td>
 						<td className="note">{employee.note}</td>
@@ -26,5 +20,14 @@ const TableBody = ({ employees }) => {
 		</tbody>
 	);
 };
+
+function formatChange(element) {
+	return element
+		.split(' ')
+		.slice(0, 1)
+		.join('')
+		.split('.')
+		.join('-');
+}
 
 export default TableBody;
