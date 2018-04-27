@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { getEmployees, changePage, sortBy } from '../actions/actions-employees';
+import { getUsers, changePage, sortBy } from '../actions/actions-users';
 import { connect } from 'react-redux';
 import Table from '../presentation/TableComponent';
 import Pagination from '../presentation/PaginationComponent';
 
 class ContainerTable extends Component {
 	componentDidMount() {
-		this.props.getEmployees();
+		this.props.getUsers();
 	}
 
 	onPageChange(page) {
@@ -21,12 +21,12 @@ class ContainerTable extends Component {
 		return (
 			<div>
 				<Table
-					employees={this.props.employees}
+					users={this.props.users}
 					sortBy={this.sortBy.bind(this)}
 				/>
 				<Pagination
 					startPage={this.props.startPage}
-					page={this.props.page}
+					page={this.props.currentPage}
 					quantityPages={Math.ceil(
 						this.props.total / this.props.usersPerPage
 					)}
@@ -40,13 +40,13 @@ class ContainerTable extends Component {
 const mapsStateToProps = store => {
 	return {
 		...store,
-		employees: store.renderedUsers,
+		users: store.renderedUsers,
 	};
 };
 
 const mapsDispatchToProps = dispatch => {
 	return {
-		getEmployees: () => dispatch(getEmployees()),
+		getUsers: () => dispatch(getUsers()),
 		changePage: page => dispatch(changePage(page)),
 		sortBy: sortKey => dispatch(sortBy(sortKey)),
 	};

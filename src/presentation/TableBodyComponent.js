@@ -1,19 +1,19 @@
 import React from 'react';
 
-const TableBody = ({ employees }) => {
+const TableBody = ({ users }) => {
 	return (
 		<tbody>
-			{employees.map(employee => {
+			{users.map(user => {
 				return (
-					<tr key={employee.id}>
-						<td className="id">{employee.id}</td>
-						<td className="firstName">{employee.firstName}</td>
-						<td className="lastName">{employee.lastName}</td>
+					<tr key={user.id}>
+						<td className="id">{user.id}</td>
+						<td className="firstName">{user.firstName}</td>
+						<td className="lastName">{user.lastName}</td>
 						<td className="dateOfBirth">
-							{formatChange(employee.dateOfBirth)}
+							{formatChange(user.dateOfBirth)}
 						</td>
-						<td className="company">{employee.company}</td>
-						<td className="note">{employee.note}</td>
+						<td className="company">{user.company}</td>
+						<td className="note">{user.note}</td>
 					</tr>
 				);
 			})}

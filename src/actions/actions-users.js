@@ -1,8 +1,8 @@
-import { GET_EMPLOYEES, SORT_BY, CHANGE_PAGE } from '../constants';
+import { GET_USERS, SORT_BY, CHANGE_PAGE } from '../constants';
 
-export function getEmployees() {
+export function getUsers() {
 	return {
-		type: GET_EMPLOYEES,
+		type: GET_USERS,
 	};
 }
 

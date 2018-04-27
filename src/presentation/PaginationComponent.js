@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Pagination extends Component {
 	onPageChange(event) {
-		let page = Number(event.target.id);
+		let page = Number(event.target.value);
 		this.props.onPageChange(page);
 	}
 
@@ -12,7 +12,7 @@ class Pagination extends Component {
 		}
 	}
 
-	onPrevPage() {
+	onBackPage() {
 		if (this.props.page > 1) {
 			this.props.onPageChange(this.props.page - 1);
 		}
@@ -23,13 +23,13 @@ class Pagination extends Component {
 
 		for (let i = this.props.startPage; i <= this.props.quantityPages; i++) {
 			pages.push(
-				<li key={i} onClick={this.onPageChange.bind(this)} id={i}>
+				<li key={i} onClick={this.onPageChange.bind(this)} value={i}>
 					{i}
 				</li>
 			);
 		}
 
-		const prevPage = <div onClick={this.onPrevPage.bind(this)}>prev</div>;
+		const prevPage = <div onClick={this.onBackPage.bind(this)}>back</div>;
 		const nextPage = <div onClick={this.onNextPage.bind(this)}>next</div>;
 
 		return (

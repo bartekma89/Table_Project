@@ -1,20 +1,20 @@
-import employeesData from '../data/persons.json';
-import { GET_EMPLOYEES, CHANGE_PAGE, SORT_BY } from '../constants';
+import usersData from '../data/persons.json';
+import { GET_USERS, CHANGE_PAGE, SORT_BY } from '../constants';
 
 const initialState = {
-	employees: employeesData,
+	users: usersData,
 	renderedUsers: [],
 	startPage: 1,
 	usersPerPage: 5,
-	page: 1,
+	currentPage: 1,
 	reverse: false,
 };
 
-const employeesReducer = (state = initialState, action) => {
+const usersReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case GET_EMPLOYEES:
-			const renderedUsers = state.employees.slice(0, state.usersPerPage);
-			const total = state.employees.length;
+		case GET_USERS:
+			const renderedUsers = state.users.slice(0, state.usersPerPage);
+			const total = state.users.length;
 
 			return {
 				...state,
@@ -23,19 +23,19 @@ const employeesReducer = (state = initialState, action) => {
 			};
 
 		case CHANGE_PAGE:
-			const page = action.payload.page;
-			let paginationPageEmployees = state.employees.slice(
-				(page - 1) * state.usersPerPage,
-				(page - 1) * state.usersPerPage + state.usersPerPage
+			const currentPage = action.payload.page;
+			let currentUsers = state.users.slice(
+				(currentPage - 1) * state.usersPerPage,
+				(currentPage - 1) * state.usersPerPage + state.usersPerPage
 			);
 			return {
 				...state,
-				renderedUsers: paginationPageEmployees,
-				page,
+				renderedUsers: currentUsers,
+				currentPage,
 			};
 
 		case SORT_BY:
-			const stateCopy = state.employees.slice();
+			const stateCopy = state.users.slice();
 			const sortKey = action.payload.sortKey;
 			const reverse = state.reverse;
 
@@ -53,16 +53,17 @@ const employeesReducer = (state = initialState, action) => {
 				};
 			};
 
-			const sortedData = stateCopy.sort(compareBy(sortKey));
-			const sortedDataPagination = sortedData.slice(
-				(state.page - 1) * state.usersPerPage,
-				(state.page - 1) * state.usersPerPage + state.usersPerPage
+			const sortedUsers = stateCopy.sort(compareBy(sortKey));
+			const sortedCurrentUsers = sortedUsers.slice(
+				(state.currentPage - 1) * state.usersPerPage,
+				(state.currentPage - 1) * state.usersPerPage +
+					state.usersPerPage
 			);
 
 			return {
 				...state,
-				employees: sortedData,
-				renderedUsers: sortedDataPagination,
+				users: sortedUsers,
+				renderedUsers: sortedCurrentUsers,
 				reverse: !reverse,
 			};
 
@@ -96,4 +97,4 @@ const dateConverter = date => {
 	return newDate;
 };
 
-export default employeesReducer;
+export default usersReducer;
