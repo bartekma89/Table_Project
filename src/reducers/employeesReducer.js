@@ -3,12 +3,9 @@ import { GET_EMPLOYEES, CHANGE_PAGE } from '../constants';
 
 const initialState = {
 	employees: employeesData,
-	//----------
 	renderedUsers: [],
 	startPage: 1,
-	page: 1,
 	usersPerPage: 5,
-	total: null,
 };
 
 const employeesReducer = (state = initialState, action) => {
@@ -24,7 +21,7 @@ const employeesReducer = (state = initialState, action) => {
 			};
 
 		case CHANGE_PAGE:
-			const page = Number(action.payload.page);
+			const page = action.payload.page;
 			console.log(`reducer page: ${page}`);
 			let paginationPageEmployees = state.employees.slice(
 				(page - 1) * state.usersPerPage,

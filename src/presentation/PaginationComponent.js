@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 
 class Pagination extends Component {
-	constructor(props) {
-		super(props);
+	onPageChange(event) {
+		let page = Number(event.target.id);
+		this.props.onPageChange(page);
 	}
 
-	onPageChange(event) {
-		let page = event.target.id;
-		console.log(page);
-		this.props.onPageChange(page);
+	onNextPage() {
+		if (this.props.page < 2) {
+			this.props.onPageChange(this.props.page + 1);
+		}
+	}
+
+	onPrevPage() {
+		if (this.props.page > 1) {
+			this.props.onPageChange(this.props.page - 1);
+		}
 	}
 
 	render() {
@@ -22,7 +29,16 @@ class Pagination extends Component {
 			);
 		}
 
-		return <ul>{pages}</ul>;
+		const prevPage = <div onClick={this.onPrevPage.bind(this)}>prev</div>;
+		const nextPage = <div onClick={this.onNextPage.bind(this)}>next</div>;
+
+		return (
+			<div>
+				{prevPage}
+				<ul>{pages}</ul>
+				{nextPage}
+			</div>
+		);
 	}
 }
 

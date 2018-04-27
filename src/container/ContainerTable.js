@@ -5,18 +5,6 @@ import Table from '../presentation/TableComponent';
 import Pagination from '../presentation/PaginationComponent';
 
 class ContainerTable extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			users: [],
-			renderedUsers: [],
-			page: 1,
-			usersPerPage: 5,
-			total: null,
-		};
-	}
-
 	componentDidMount() {
 		this.props.getEmployees();
 	}
@@ -31,6 +19,7 @@ class ContainerTable extends Component {
 				<Table employees={this.props.employees} />
 				<Pagination
 					startPage={this.props.startPage}
+					page={this.props.page}
 					quantityPages={Math.ceil(
 						this.props.total / this.props.usersPerPage
 					)}
