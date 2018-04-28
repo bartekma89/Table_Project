@@ -49,10 +49,25 @@ thead th {
 	padding: 20px;
 }
 
+.id {
+	padding: 20px 45px;
+}
+
 tbody td {
 	padding: 20px 10px;
 }
 
 .company {
 	text-transform: lowercase;
+}
+thead a:after {
+	content: url(../../img/sort.svg);
+	display: inline-block;
+	width: 7px;
+	margin-left: 17.5px;
+	cursor: pointer;
+}
+
+thead a {
+	cursor: pointer;
 }
