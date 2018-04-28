@@ -5,7 +5,7 @@ const TableBody = ({ users }) => {
 		<tbody>
 			{users.map(user => {
 				return (
-					<tr key={user.id}>
+					<tr className="row" key={user.id}>
 						<td className="id">{user.id}</td>
 						<td className="firstName">{user.firstName}</td>
 						<td className="lastName">{user.lastName}</td>

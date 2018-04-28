@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { getUsers, changePage, sortBy } from '../actions/actions-users';
 import { connect } from 'react-redux';
-import Table from '../presentation/TableComponent';
-import Pagination from '../presentation/PaginationComponent';
+import Table from '../presentation/Table/TableComponent';
+import Pagination from '../presentation/Pagination/PaginationComponent';
 
 class ContainerTable extends Component {
 	componentDidMount() {

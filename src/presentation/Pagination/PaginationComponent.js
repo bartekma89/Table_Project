@@ -7,7 +7,7 @@ class Pagination extends Component {
 	}
 
 	onNextPage() {
-		if (this.props.page < 2) {
+		if (this.props.page < this.props.quantityPages) {
 			this.props.onPageChange(this.props.page + 1);
 		}
 	}

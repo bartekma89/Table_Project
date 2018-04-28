@@ -1,11 +1,12 @@
 import React from 'react';
-import TableHeader from './TableHeaderComponent';
-import TableBody from './TableBodyComponent';
+import TableHeader from '../TableHeader/TableHeaderComponent';
+import TableBody from '../TableBody/TableBodyComponent';
+import './Table.css';
 
 const Table = ({ ...props }) => {
 	return (
 		<div>
-			<table>
+			<table id="table">
 				<TableHeader {...props} />
 				<TableBody {...props} />
 			</table>

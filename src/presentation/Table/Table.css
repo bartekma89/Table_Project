@@ -1,0 +1,58 @@
+#table {
+	border-collapse: collapse;
+	border-radius: 5px;
+	width: 100%;
+	background-color: #e5eefb;
+	color: #3a5071;
+	font-weight: bold;
+}
+
+#table th:not(:first-child),
+td:not(:first-child) {
+	min-width: 115px;
+}
+
+thead {
+	letter-spacing: 0.66px;
+}
+
+tbody {
+	letter-spacing: 0.75px;
+}
+
+thead th:not(:first-child) {
+	border-left: 1px solid #dae0e9;
+}
+
+tbody td:not(:first-child) {
+	border-left: 1px solid #dae0e9;
+}
+
+tbody .row:nth-of-type(odd) {
+	background-color: #fff;
+}
+
+tbody .row:nth-of-type(5) td:first-child {
+	border-bottom-left-radius: 5px;
+}
+
+tbody .row:nth-of-type(5) td:last-child {
+	border-bottom-right-radius: 5px;
+}
+
+tbody td:nth-of-type(even) {
+	font-weight: 400;
+	color: #577198;
+}
+
+thead th {
+	padding: 20px;
+}
+
+tbody td {
+	padding: 20px 10px;
+}
+
+.company {
+	text-transform: lowercase;
+}

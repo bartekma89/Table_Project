@@ -1,10 +1,10 @@
 import React from 'react';
-import Button from './ButtonComponent';
+import Button from '../Button/ButtonComponent';
 
 const TableHeader = ({ sortBy }) => {
 	return (
 		<thead>
-			<tr>
+			<tr className="row">
 				<th>
 					<Button
 						sortBy={sortBy.bind(this)}
