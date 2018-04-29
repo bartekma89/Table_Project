@@ -1,37 +1,37 @@
-tbody {
+.tableBody {
 	letter-spacing: 0.75px;
 	font-size: 1.6rem;
 	color: #577198;
 }
 
-tbody td {
+.body-record {
 	padding: 2rem 0.1rem;
 }
 
-tbody td:not(:first-child) {
+.body-record:not(:first-child) {
 	border-left: 0.1rem solid #dae0e9;
 }
 
-tbody > .row:nth-of-type(odd) {
+.body-row:nth-of-type(odd) {
 	background-color: #fff;
 }
 
-tbody > .row:nth-of-type(even) {
+.body-row:nth-of-type(even) {
 	background-color: #f1f6fc;
 }
 
-tbody > .row:last-child > td:first-child {
+.body-row:last-child > .body-record:first-child {
 	border-bottom-left-radius: 5px;
 }
 
-tbody > .row:last-child > td:last-child {
+.body-row:last-child > .body-record:last-child {
 	border-bottom-right-radius: 5px;
 }
 
-tbody td:nth-of-type(odd) {
+.body-record:nth-of-type(odd) {
 	font-weight: bold;
 }
 
-td.company {
+.body-record.company {
 	text-transform: lowercase;
 }

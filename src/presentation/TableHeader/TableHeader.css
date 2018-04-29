@@ -13,11 +13,11 @@
 	border-left: 1px solid #dae0e9;
 }
 
-th.header-record:first-child {
+.header-record:first-child {
 	border-top-left-radius: 5px;
 }
 
-th.header-record:last-child {
+.header-record:last-child {
 	border-top-right-radius: 5px;
 }
 

@@ -3,22 +3,22 @@ import './TableBody.css';
 
 const TableBody = ({ users }) => {
 	return (
-		<tbody>
+		<tbody className="tableBody">
 			{users.map(user => {
 				return (
-					<tr className="row" key={user.id}>
-						<td className="record-body id">{user.id}</td>
-						<td className="record-body firstName">
+					<tr className="body-row" key={user.id}>
+						<td className="body-record id">{user.id}</td>
+						<td className="body-record firstName">
 							{user.firstName}
 						</td>
-						<td className="record-body lastName">
+						<td className="body-record lastName">
 							{user.lastName}
 						</td>
-						<td className="record-body dateOfBirth">
+						<td className="body-record dateOfBirth">
 							{formatChange(user.dateOfBirth)}
 						</td>
-						<td className="record-body company">{user.company}</td>
-						<td className="record-body note">{user.note}</td>
+						<td className="body-record company">{user.company}</td>
+						<td className="body-record note">{user.note}</td>
 					</tr>
 				);
 			})}
