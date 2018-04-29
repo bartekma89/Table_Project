@@ -1,4 +1,5 @@
 import React from 'react';
+import './TableBody.css';
 
 const TableBody = ({ users }) => {
 	return (
@@ -6,14 +7,14 @@ const TableBody = ({ users }) => {
 			{users.map(user => {
 				return (
 					<tr className="row" key={user.id}>
-						<td className="id">{user.id}</td>
-						<td className="firstName">{user.firstName}</td>
-						<td className="lastName">{user.lastName}</td>
-						<td className="dateOfBirth">
+						<td className="record id">{user.id}</td>
+						<td className="record firstName">{user.firstName}</td>
+						<td className="record lastName">{user.lastName}</td>
+						<td className="record dateOfBirth">
 							{formatChange(user.dateOfBirth)}
 						</td>
-						<td className="company">{user.company}</td>
-						<td className="note">{user.note}</td>
+						<td className="record company">{user.company}</td>
+						<td className="record note">{user.note}</td>
 					</tr>
 				);
 			})}

@@ -1,0 +1,27 @@
+thead {
+	letter-spacing: 0.66px;
+	background-color: #e5eefb;
+	color: #3a5071;
+	font-size: 1.4rem;
+}
+
+th {
+	padding: 2rem;
+}
+
+th:not(:first-child) {
+	border-left: 1px solid #dae0e9;
+}
+
+th:first-child {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+thead > .row > th:first-child {
+	border-top-left-radius: 5px;
+}
+
+thead > .row > th:last-child {
+	border-top-right-radius: 5px;
+}

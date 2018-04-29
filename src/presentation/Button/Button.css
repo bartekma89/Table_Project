@@ -1,0 +1,11 @@
+a:after {
+	content: url(../../img/sort.svg);
+	display: inline-block;
+	width: 7px;
+	margin-left: 15px;
+	cursor: pointer;
+}
+
+a {
+	cursor: pointer;
+}

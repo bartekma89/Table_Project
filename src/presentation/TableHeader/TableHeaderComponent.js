@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../Button/ButtonComponent';
+import './TableHeader.css';
 
 const TableHeader = ({ sortBy }) => {
 	return (

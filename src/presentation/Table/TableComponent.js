@@ -6,7 +6,7 @@ import './Table.css';
 const Table = ({ ...props }) => {
 	return (
 		<div>
-			<table id="table">
+			<table className="table">
 				<TableHeader {...props} />
 				<TableBody {...props} />
 			</table>
