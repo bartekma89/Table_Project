@@ -1,0 +1,41 @@
+.pagination {
+	font-size: 1.6rem;
+	font-weight: bold;
+	letter-spacing: 0.75px;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+}
+
+.pagination-list {
+	list-style-type: none;
+	display: inline-block;
+}
+
+.pagination-item {
+	display: inline-block;
+	color: #272f3e;
+	padding: 0.5rem;
+	cursor: pointer;
+}
+
+.pagination-item.active {
+	color: #fff;
+}
+
+.arrow-prev,
+.arrow-next {
+	display: inline-block;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	cursor: pointer;
+}
+
+.arrow-prev:before {
+	content: '< ';
+}
+
+.arrow-next:after {
+	content: ' >';
+}
+
+

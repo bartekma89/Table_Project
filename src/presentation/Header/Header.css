@@ -1,0 +1,16 @@
+.header-container {
+	margin: 3rem;
+}
+
+.logo-employees {
+	background: url('../../img/icon - pracownicy.svg') no-repeat center;
+	background-size: contain;
+	width: 9rem;
+	height: 5.5rem;
+	width: 100%;
+}
+
+.title {
+	font-size: 3.2rem;
+	margin-top: initial;
+}

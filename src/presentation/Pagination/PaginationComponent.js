@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
+import './Pagination.css';
 
 class Pagination extends Component {
 	onPageChange(event) {
@@ -23,19 +25,36 @@ class Pagination extends Component {
 
 		for (let i = this.props.startPage; i <= this.props.quantityPages; i++) {
 			pages.push(
-				<li key={i} onClick={this.onPageChange.bind(this)} value={i}>
+				<li
+					className={classNames('pagination-item', {
+						active: i === this.props.page,
+					})}
+					key={i}
+					onClick={this.onPageChange.bind(this)}
+					value={i}
+				>
 					{i}
 				</li>
 			);
+			console.log(`i: ${i}`);
+			console.log(`active page: ${this.props.page}`);
 		}
 
-		const prevPage = <div onClick={this.onBackPage.bind(this)}>back</div>;
-		const nextPage = <div onClick={this.onNextPage.bind(this)}>next</div>;
+		const prevPage = (
+			<div className="arrow-prev" onClick={this.onBackPage.bind(this)}>
+				back
+			</div>
+		);
+		const nextPage = (
+			<div className="arrow-next" onClick={this.onNextPage.bind(this)}>
+				next
+			</div>
+		);
 
 		return (
-			<div>
+			<div className="pagination">
 				{prevPage}
-				<ul>{pages}</ul>
+				<ul className="pagination-list">{pages}</ul>
 				{nextPage}
 			</div>
 		);
