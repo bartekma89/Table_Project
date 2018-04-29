@@ -36,8 +36,6 @@ class Pagination extends Component {
 					{i}
 				</li>
 			);
-			console.log(`i: ${i}`);
-			console.log(`active page: ${this.props.page}`);
 		}
 
 		const prevPage = (

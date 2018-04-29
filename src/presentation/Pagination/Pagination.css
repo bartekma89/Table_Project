@@ -14,11 +14,11 @@
 .pagination-item {
 	display: inline-block;
 	color: #272f3e;
-	padding: 0.5rem;
+	padding: 0.8rem;
 	cursor: pointer;
 }
 
-.pagination-item.active {
+.active {
 	color: #fff;
 }
 
