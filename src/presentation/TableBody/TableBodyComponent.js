@@ -7,14 +7,18 @@ const TableBody = ({ users }) => {
 			{users.map(user => {
 				return (
 					<tr className="row" key={user.id}>
-						<td className="record id">{user.id}</td>
-						<td className="record firstName">{user.firstName}</td>
-						<td className="record lastName">{user.lastName}</td>
-						<td className="record dateOfBirth">
+						<td className="record-body id">{user.id}</td>
+						<td className="record-body firstName">
+							{user.firstName}
+						</td>
+						<td className="record-body lastName">
+							{user.lastName}
+						</td>
+						<td className="record-body dateOfBirth">
 							{formatChange(user.dateOfBirth)}
 						</td>
-						<td className="record company">{user.company}</td>
-						<td className="record note">{user.note}</td>
+						<td className="record-body company">{user.company}</td>
+						<td className="record-body note">{user.note}</td>
 					</tr>
 				);
 			})}

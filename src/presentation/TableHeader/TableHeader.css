@@ -13,15 +13,15 @@ th:not(:first-child) {
 	border-left: 1px solid #dae0e9;
 }
 
-th:first-child {
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
-}
-
 thead > .row > th:first-child {
 	border-top-left-radius: 5px;
 }
 
 thead > .row > th:last-child {
 	border-top-right-radius: 5px;
+}
+
+th.id {
+	padding: 2rem 1.5rem;
+	min-width: 40px;
 }

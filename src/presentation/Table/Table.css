@@ -2,11 +2,11 @@
 	border-collapse: collapse;
 	margin: 0 auto;
 	width: 100%;
-	max-width: 1000px;
+	max-width: 800px;
 	box-shadow: 0.1rem 0.1rem 2rem rgba(0, 0, 0, 0.5);
 }
 
 .table th:not(:first-child),
 td:not(:first-child) {
-	min-width: 120px;
+	min-width: 115px;
 }

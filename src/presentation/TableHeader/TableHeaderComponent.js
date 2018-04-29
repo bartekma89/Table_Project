@@ -6,42 +6,42 @@ const TableHeader = ({ sortBy }) => {
 	return (
 		<thead>
 			<tr className="row">
-				<th>
+				<th className="record-header id">
 					<Button
 						sortBy={sortBy.bind(this)}
 						sortKey="id"
 						title="iD"
 					/>
 				</th>
-				<th>
+				<th className="record-header firstName">
 					<Button
 						sortBy={sortBy.bind(this)}
 						sortKey="firstName"
 						title="First Name"
 					/>
 				</th>
-				<th>
+				<th className="record-header lastName">
 					<Button
 						sortBy={sortBy.bind(this)}
 						sortKey="lastName"
 						title="Last Name"
 					/>
 				</th>
-				<th>
+				<th className="record-header dateOfBirth">
 					<Button
 						sortBy={sortBy.bind(this)}
 						sortKey="dateOfBirth"
 						title="Birth Date"
 					/>
 				</th>
-				<th>
+				<th className="record-header company">
 					<Button
 						sortBy={sortBy.bind(this)}
 						sortKey="company"
 						title="Company"
 					/>
 				</th>
-				<th>
+				<th className="record-header note">
 					<Button
 						sortBy={sortBy.bind(this)}
 						sortKey="note"

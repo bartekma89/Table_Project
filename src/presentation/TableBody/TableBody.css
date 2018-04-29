@@ -5,7 +5,7 @@ tbody {
 }
 
 tbody td {
-	padding: 2rem 1rem;
+	padding: 2rem 0.1rem;
 }
 
 tbody td:not(:first-child) {
@@ -30,10 +30,6 @@ tbody > .row:last-child > td:last-child {
 
 tbody td:nth-of-type(odd) {
 	font-weight: bold;
-}
-
-td.id {
-	padding: 2rem auto;
 }
 
 td.company {
