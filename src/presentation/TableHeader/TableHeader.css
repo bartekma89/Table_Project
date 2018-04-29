@@ -1,27 +1,27 @@
-thead {
+.tableHeader {
 	letter-spacing: 0.66px;
 	background-color: #e5eefb;
 	color: #3a5071;
 	font-size: 1.4rem;
 }
 
-th {
+.header-record {
 	padding: 2rem;
 }
 
-th:not(:first-child) {
+.header-record:not(:first-child) {
 	border-left: 1px solid #dae0e9;
 }
 
-thead > .row > th:first-child {
+th.header-record:first-child {
 	border-top-left-radius: 5px;
 }
 
-thead > .row > th:last-child {
+th.header-record:last-child {
 	border-top-right-radius: 5px;
 }
 
-th.id {
-	padding: 2rem 1.5rem;
-	min-width: 40px;
+.header-record.id {
+	padding: 2rem 0.5rem;
+	min-width: 50px;
 }
