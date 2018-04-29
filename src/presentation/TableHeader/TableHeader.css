@@ -25,3 +25,11 @@
 	padding: 2rem 0.5rem;
 	min-width: 50px;
 }
+
+@media (max-width: 767px) {
+	.header-row {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+}
