@@ -6,7 +6,9 @@ footer {
 }
 
 .logo-chilid {
+	-webkit-mask: url('../../img/chilid-logo.svg') no-repeat center;
 	mask: url('../../img/chilid-logo.svg') no-repeat center;
+	-webkit-mask-size: contain;
 	mask-size: contain;
 	height: 2.5rem;
 	width: 6rem;
