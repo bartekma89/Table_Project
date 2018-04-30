@@ -10,6 +10,12 @@ footer {
 	mask-size: contain;
 	height: 2.5rem;
 	width: 6rem;
-	margin: 3rem auto;
+	margin: 2rem auto;
 	background-color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+	footer {
+		position: static;
+	}
 }

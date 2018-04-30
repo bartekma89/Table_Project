@@ -11,7 +11,7 @@
 	min-width: 100px;
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
 	table,
 	thead,
 	tbody,
