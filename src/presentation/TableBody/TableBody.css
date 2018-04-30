@@ -36,30 +36,30 @@
 	text-transform: lowercase;
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
 	.body-row {
 		cursor: pointer;
 	}
 
 	.body-row:first-child {
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
+		border-top-left-radius: 0.5rem;
+		border-top-right-radius: 0.5rem;
 	}
 
 	.body-row:last-child {
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
 	}
 
 	.body-row:not(:last-child) {
-		border-bottom: 1px solid #dae0e9;
+		border-bottom: 0.1rem solid #dae0e9;
 	}
 
 	.body-record {
 		position: relative;
 		padding-left: 50%;
-		padding-top: 10px;
-		padding-bottom: 10px;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
 	}
 
 	.body-record:not(:last-child) {
@@ -68,8 +68,8 @@
 
 	.body-record:before {
 		position: absolute;
-		top: 10px;
-		left: 25px;
+		top: 1rem;
+		left: 2rem;
 		width: 45%;
 		white-space: nowrap;
 		text-align: left;

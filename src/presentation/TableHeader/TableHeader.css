@@ -26,10 +26,10 @@
 	min-width: 50px;
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
 	.header-row {
 		position: absolute;
-		top: -9999px;
-		left: -9999px;
+		top: -999rem;
+		left: -999rem;
 	}
 }
