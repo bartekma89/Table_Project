@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import './Pagination.css';
+import PropTypes from 'prop-types';
 
 class Pagination extends Component {
+	static propTypes = {
+		startPage: PropTypes.number.isRequired,
+		page: PropTypes.number.isRequired,
+		quantityPages: PropTypes.number.isRequired,
+		onPageChange: PropTypes.func.isRequired,
+	};
+
 	onPageChange(event) {
 		let page = Number(event.target.value);
 		this.props.onPageChange(page);

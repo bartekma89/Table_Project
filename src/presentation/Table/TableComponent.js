@@ -3,7 +3,7 @@ import TableHeader from '../TableHeader/TableHeaderComponent';
 import TableBody from '../TableBody/TableBodyComponent';
 import './Table.css';
 
-const Table = ({ ...props }) => {
+const Table = props => {
 	return (
 		<div>
 			<table className="table">

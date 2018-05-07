@@ -1,5 +1,6 @@
 import React from 'react';
 import './TableBody.css';
+import PropTypes from 'prop-types';
 
 const TableBody = ({ users, sortBy }) => {
 	if (document.documentElement.clientWidth > 767) {
@@ -75,6 +76,11 @@ const TableBody = ({ users, sortBy }) => {
 			</tbody>
 		);
 	}
+};
+
+TableBody.propTypes = {
+	users: PropTypes.array.isRequired,
+	sortBy: PropTypes.func.isRequired,
 };
 
 function formatChange(element) {

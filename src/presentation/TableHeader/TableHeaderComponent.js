@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../Button/ButtonComponent';
 import './TableHeader.css';
+import PropTypes from 'prop-types';
 
 const TableHeader = ({ sortBy }) => {
 	return (
@@ -51,6 +52,10 @@ const TableHeader = ({ sortBy }) => {
 			</tr>
 		</thead>
 	);
+};
+
+TableHeader.propTypes = {
+	sortBy: PropTypes.func.isRequired,
 };
 
 export default TableHeader;
